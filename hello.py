@@ -1,4 +1,5 @@
 from flask import Flask, request, abort
+from os import environ
 
 from linebot import ( 
 	LineBotApi, WebhookHandler
@@ -10,6 +11,9 @@ from linebot.models import (
 	MessageEvent, TextMessage, TextSendMessage,
 )
 app = Flask(__name__)
+
+CHANNEL_ACCESS_TOKEN = environ.get('CHANNEL_ACCESS_TOKEN')
+CHANNEL_SECRET = environ.get('CHANNEL_SECRET')
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
