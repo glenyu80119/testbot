@@ -19,3 +19,7 @@ handler = WebhookHandler('30d9b4930e5eaa9cac656c533977e295')
 @app.route('/')
 def hello():
 	return 'Hello, World!'
+
+
+if __name__ == "__main__":
+    app.run()
